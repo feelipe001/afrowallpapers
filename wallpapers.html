@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria - AfroWallpapers</title>
+    <style>
+        body {
+            background-color: black;
+            color: lime;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .gallery img {
+            max-width: 250px;
+            border-radius: 10px;
+            border: 3px solid lime;
+            transition: transform 0.2s;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <h2>📱 Toque e segure para salvar como papel de parede</h2>
+    <div class="gallery">
+        <img src="img/wallpaper1.jpg" alt="Wallpaper 1">
+        <img src="img/wallpaper2.jpg" alt="Wallpaper 2">
+        <img src="img/wallpaper3.jpg" alt="Wallpaper 3">
+    </div>
+</body>
+</html>
