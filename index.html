@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AfroWallpapers - Galeria</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .gallery img {
+            width: 100%;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        #baixar {
+            padding: 15px 25px;
+            font-size: 1rem;
+            background-color: #facc15;
+            color: #000;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 30px;
+        }
+        .unit-banner {
+            margin-top: 50px;
+        }
+        .unit-banner img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px #000;
+        }
+        #unittv-banner {
+            background-color: #222;
+            padding: 15px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>AfroWallpapers</h1>
+    <p>Escolha sua imagem favorita:</p>
+
+    <div class="gallery">
+        <img src="https://i.postimg.cc/yNc1v8X1/wallpaper1.jpg" onclick="iniciarDownload('https://i.postimg.cc/yNc1v8X1/wallpaper1.jpg')">
+        <img src="https://i.postimg.cc/V6tDW2XV/wallpaper2.jpg" onclick="iniciarDownload('https://i.postimg.cc/V6tDW2XV/wallpaper2.jpg')">
+        <img src="https://i.postimg.cc/gkSpmm1P/wallpaper3.jpg" onclick="iniciarDownload('https://i.postimg.cc/gkSpmm1P/wallpaper3.jpg')">
+    </div>
+
+    <button id="baixar" disabled style="display:none;">Baixar imagem</button>
+
+    <div class="unit-banner">
+        <p>Curte filmes? 👇</p>
+        <a href="https://links.unitvnet.app/IAFLDMW" target="_blank">
+            <img src="https://i.postimg.cc/rwxSt1Qb/banner-unitv.jpg" alt="Banner UnitTV">
+        </a>
+    </div>
+
+    <div id="unittv-banner">
+        🚀 Aproveite também: <a href="https://links.unitvnet.app/IAFLDMW" target="_blank">Assista filmes no celular</a>
+    </div>
+
+    <script>
+        let currentImage = "";
+
+        function iniciarDownload(link) {
+            const btn = document.getElementById("baixar");
+            btn.style.display = "inline-block";
+            btn.disabled = true;
+            btn.innerText = "Aguarde 5 segundos...";
+            currentImage = link;
+
+            setTimeout(() => {
+                btn.innerText = "Baixar imagem";
+                btn.disabled = false;
+                btn.onclick = () => window.location.href = currentImage;
+            }, 5000);
+        }
+    </script>
+
+    <!-- Adsterra popunder (colar seu script aqui) -->
+    <!-- <script type='text/javascript' src='//YOUR-ADSTERRA-SCRIPT.js'></script> -->
+
+</body>
+</html>
