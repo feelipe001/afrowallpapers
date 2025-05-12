@@ -6,14 +6,31 @@
     <title>Galeria - AfroWallpapers</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 30px;
+        }
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
             gap: 15px;
             padding: 10px;
         }
+        .gallery-item {
+            aspect-ratio: 3 / 5;
+            overflow: hidden;
+        }
         .gallery-item img {
             width: 100%;
+            height: 100%;
+            object-fit: cover;
             border-radius: 12px;
             border: 3px solid #facc15;
             cursor: pointer;
@@ -56,15 +73,15 @@
 
     <button id="baixar">Baixar imagem</button>
 
-    <div class="unit-banner">
+    <div class="unit-banner" style="margin-top: 50px;">
         <p>Curte filmes? 👇</p>
         <a href="https://links.unitvnet.app/IAFLDMW" target="_blank">
-            <img src="https://i.postimg.cc/rwxSt1Qb/banner-unitv.jpg" alt="Banner UnitTV">
+            <img src="https://i.postimg.cc/rwxSt1Qb/banner-unitv.jpg" alt="Banner UnitTV" style="width: 100%; max-width: 600px; border-radius: 12px;">
         </a>
     </div>
 
-    <div id="unittv-banner">
-        🚀 Aproveite também: <a href="https://links.unitvnet.app/IAFLDMW" target="_blank">Assista filmes no celular</a>
+    <div id="unittv-banner" style="background-color: #222; padding: 15px; position: fixed; bottom: 0; width: 100%;">
+        🚀 Aproveite também: <a href="https://links.unitvnet.app/IAFLDMW" target="_blank" style="color: #facc15;">Assista filmes no celular</a>
     </div>
 
     <script>
@@ -76,15 +93,21 @@
             btn.disabled = true;
             btn.innerText = "Aguarde 5 segundos...";
 
-            // Abre anúncio (troque por seu link de anúncio real)
-            window.open("https://www.google.com", "_blank");
+            window.open("https://www.google.com", "_blank"); // Substituir pelo link do anúncio real
 
             currentImage = src;
 
             setTimeout(() => {
                 btn.innerText = "Baixar imagem";
                 btn.disabled = false;
-                btn.onclick = () => window.location.href = currentImage;
+                btn.onclick = () => {
+                    const link = document.createElement('a');
+                    link.href = currentImage;
+                    link.download = currentImage.split("/").pop();
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                };
             }, 5000);
         }
     </script>
