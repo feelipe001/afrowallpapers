@@ -43,6 +43,21 @@
     .gallery-item img:hover {
       transform: scale(1.03);
     }
+
+    .banner-unitv {
+      margin-top: 40px;
+    }
+
+    .banner-unitv img {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 12px;
+    }
+
+    .ads-banner {
+      margin: 40px auto;
+      max-width: 728px;
+    }
   </style>
 </head>
 <body>
@@ -64,12 +79,26 @@
     <div class="gallery-item"><img src="img/wallpaper12.jpg" onclick="baixarImagemComAnuncio(this.src)" /></div>
   </div>
 
+  <!-- Banner UnitTV -->
+  <div class="banner-unitv">
+    <p>Curte filmes? 👇</p>
+    <a href="https://links.unitvnet.app/IAFLDMW" target="_blank">
+      <img src="https://i.postimg.cc/rwxSt1Qb/banner-unitv.jpg" alt="Banner UnitTV">
+    </a>
+  </div>
+
+  <!-- Banner Visual Adsterra -->
+  <div class="ads-banner">
+    <script async="async" data-cfasync="false" src="//pl26628619.profitableratecpm.com/1645face957301b01d1d3a75791d71f6/invoke.js"></script>
+    <div id="container-1645face957301b01d1d3a75791d71f6"></div>
+  </div>
+
   <script>
     function baixarImagemComAnuncio(src) {
-      // Abre o anúncio (Direct Link)
+      // Abre o anúncio (Direct Link da Adsterra)
       window.open("https://www.profitableratecpm.com/r0qijtg4z?key=061e2ccc9f76746379f7fd047ca748d2", "_blank");
 
-      // Força o download automático
+      // Baixa a imagem automaticamente
       const link = document.createElement('a');
       link.href = src;
       link.download = src.split("/").pop();
