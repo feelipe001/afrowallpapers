@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Galeria - AfroWallpapers</title>
-  <link rel="stylesheet" href="css/style.css" />
   <style>
     body {
       background-color: #000;
@@ -44,18 +43,6 @@
     .gallery-item img:hover {
       transform: scale(1.03);
     }
-
-    #baixar {
-      margin-top: 20px;
-      padding: 12px 25px;
-      font-size: 1rem;
-      background-color: #facc15;
-      color: #000;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      display: none;
-    }
   </style>
 </head>
 <body>
@@ -63,72 +50,37 @@
   <h1>Galeria de Wallpapers</h1>
 
   <div class="gallery">
-    <div class="gallery-item"><img src="https://i.postimg.cc/QCCHpyTX/wallpaper1-jpg.jpg" onclick="iniciarDownload(this.src)" /></div>
-    <div class="gallery-item"><img src="https://i.postimg.cc/LXCs630G/wallpaper10-jpg.jpg" onclick="iniciarDownload(this.src)" /></div>
-    <div class="gallery-item"><img src="https://i.postimg.cc/mrSDKs3L/wallpaper11-jpg.jpg" onclick="iniciarDownload(this.src)" /></div>
-    <div class="gallery-item"><img src="https://i.postimg.cc/bvPr6JtV/wallpaper12-jpg.jpg" onclick="iniciarDownload(this.src)" /></div>
-    <div class="gallery-item"><img src="https://i.postimg.cc/0Q86NQ5K/wallpaper2-jpg.jpg" onclick="iniciarDownload(this.src)" /></div>
-    <div class="gallery-item"><img src="https://i.postimg.cc/mr3zRM4G/wallpaper3-jpg.jpg" onclick="iniciarDownload(this.src)" /></div>
-    <div class="gallery-item"><img src="https://i.postimg.cc/G2q4TC97/wallpaper4-jpg.jpg" onclick="iniciarDownload(this.src)" /></div>
-    <div class="gallery-item"><img src="https://i.postimg.cc/026zjhvn/wallpaper5-jpg.jpg" onclick="iniciarDownload(this.src)" /></div>
-    <div class="gallery-item"><img src="https://i.postimg.cc/wMr3FQXD/wallpaper6-jpg.jpg" onclick="iniciarDownload(this.src)" /></div>
-    <div class="gallery-item"><img src="https://i.postimg.cc/hPHfdMPB/wallpaper7-jpg.jpg" onclick="iniciarDownload(this.src)" /></div>
-    <div class="gallery-item"><img src="https://i.postimg.cc/wjL3cJ7s/wallpaper8-jpg.jpg" onclick="iniciarDownload(this.src)" /></div>
-    <div class="gallery-item"><img src="https://i.postimg.cc/zBXBrcpn/wallpaper9-jpg.jpg" onclick="iniciarDownload(this.src)" /></div>
-  </div>
-
-  <button id="baixar">Baixar imagem</button>
-
-  <div class="unit-banner" style="margin-top: 50px;">
-    <p>Curte filmes? 👇</p>
-    <a href="https://links.unitvnet.app/IAFLDMW" target="_blank">
-      <img src="https://i.postimg.cc/rwxSt1Qb/banner-unitv.jpg" alt="Banner UnitTV"
-        style="width: 100%; max-width: 600px; border-radius: 12px;" />
-    </a>
-  </div>
-
-  <div id="unittv-banner"
-    style="background-color: #222; padding: 15px; position: fixed; bottom: 0; width: 100%;">
-    🚀 Aproveite também:
-    <a href="https://links.unitvnet.app/IAFLDMW" target="_blank" style="color: #facc15;">
-      Assista filmes no celular
-    </a>
+    <div class="gallery-item"><img src="img/wallpaper1.jpg" onclick="baixarImagemComAnuncio(this.src)" /></div>
+    <div class="gallery-item"><img src="img/wallpaper2.jpg" onclick="baixarImagemComAnuncio(this.src)" /></div>
+    <div class="gallery-item"><img src="img/wallpaper3.jpg" onclick="baixarImagemComAnuncio(this.src)" /></div>
+    <div class="gallery-item"><img src="img/wallpaper4.jpg" onclick="baixarImagemComAnuncio(this.src)" /></div>
+    <div class="gallery-item"><img src="img/wallpaper5.jpg" onclick="baixarImagemComAnuncio(this.src)" /></div>
+    <div class="gallery-item"><img src="img/wallpaper6.jpg" onclick="baixarImagemComAnuncio(this.src)" /></div>
+    <div class="gallery-item"><img src="img/wallpaper7.jpg" onclick="baixarImagemComAnuncio(this.src)" /></div>
+    <div class="gallery-item"><img src="img/wallpaper8.jpg" onclick="baixarImagemComAnuncio(this.src)" /></div>
+    <div class="gallery-item"><img src="img/wallpaper9.jpg" onclick="baixarImagemComAnuncio(this.src)" /></div>
+    <div class="gallery-item"><img src="img/wallpaper10.jpg" onclick="baixarImagemComAnuncio(this.src)" /></div>
+    <div class="gallery-item"><img src="img/wallpaper11.jpg" onclick="baixarImagemComAnuncio(this.src)" /></div>
+    <div class="gallery-item"><img src="img/wallpaper12.jpg" onclick="baixarImagemComAnuncio(this.src)" /></div>
   </div>
 
   <script>
-    let currentImage = "";
-
-    function iniciarDownload(src) {
-      const btn = document.getElementById("baixar");
-      btn.style.display = "inline-block";
-      btn.disabled = true;
-      btn.innerText = "Aguarde 5 segundos...";
-
-      // Abrir Direct Link
+    function baixarImagemComAnuncio(src) {
+      // Abre o anúncio (Direct Link)
       window.open("https://www.profitableratecpm.com/r0qijtg4z?key=061e2ccc9f76746379f7fd047ca748d2", "_blank");
 
-      currentImage = src;
-
-      setTimeout(() => {
-        btn.innerText = "Baixar imagem";
-        btn.disabled = false;
-        btn.onclick = () => {
-          const link = document.createElement('a');
-          link.href = currentImage;
-          link.download = currentImage.split("/").pop();
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-        };
-      }, 5000);
+      // Força o download automático
+      const link = document.createElement('a');
+      link.href = src;
+      link.download = src.split("/").pop();
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     }
   </script>
 
-  <!-- Popunder Adsterra -->
+  <!-- Popunder da Adsterra -->
   <script type='text/javascript' src='//pl26628459.profitableratecpm.com/65/d1/01/65d1011ac47a156e37aaedb46c5961c6.js'></script>
-
-  <!-- Social Bar Adsterra -->
-  <script type='text/javascript' src='//pl26628453.profitableratecpm.com/1e/3e/fd/1e3efddd2a811c39d8ec77d67bc3121e.js'></script>
 
 </body>
 </html>
