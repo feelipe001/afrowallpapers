@@ -197,16 +197,6 @@
       <option value="galeria4.html">Galeria 4</option>
       <option value="galeria5.html">Galeria 5</option>
     </select>
- <div class="dropdown-menu">
-  <label for="pageSelect">Ir para:</label>
-  <select id="pageSelect" onchange="window.location.href=this.value;">
-    <option value="galeria.html">Galeria 1</option>
-    <option value="galeria2.html">Galeria 2</option>
-    <option value="galeria3.html">Galeria 3</option>
-    <option value="galeria4.html">Galeria 4</option>
-    <option value="galeria5.html">Galeria 5</option>
-  </select>
-
   <script>
     const select = document.getElementById("pageSelect");
     const currentPage = window.location.pathname.split("/").pop();
