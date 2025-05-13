@@ -197,15 +197,29 @@
       <option value="galeria4.html">Galeria 4</option>
       <option value="galeria5.html">Galeria 5</option>
     </select>
-  </div>
+ <div class="dropdown-menu">
+  <label for="pageSelect">Ir para:</label>
+  <select id="pageSelect" onchange="window.location.href=this.value;">
+    <option value="galeria.html">Galeria 1</option>
+    <option value="galeria2.html">Galeria 2</option>
+    <option value="galeria3.html">Galeria 3</option>
+    <option value="galeria4.html">Galeria 4</option>
+    <option value="galeria5.html">Galeria 5</option>
+  </select>
 
-  <div class="menu">
-    <a href="galeria.html" class="menu-link">Galeria 1</a>
-    <a href="galeria2.html" class="menu-link">Galeria 2</a>
-    <a href="galeria3.html" class="menu-link">Galeria 3</a>
-    <a href="galeria4.html" class="menu-link">Galeria 4</a>
-    <a href="galeria5.html" class="menu-link">Galeria 5</a>
-  </div>
+  <script>
+    const select = document.getElementById("pageSelect");
+    const currentPage = window.location.pathname.split("/").pop();
+
+    for (let option of select.options) {
+      if (option.value === currentPage) {
+        option.selected = true;
+        break;
+      }
+    }
+  </script>
+</div>
+
 
   <h1>Galeria de Wallpapers</h1>
 
