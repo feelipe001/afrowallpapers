@@ -58,9 +58,42 @@
       margin: 40px auto;
       max-width: 728px;
     }
+
+    /* Estilo do menu de navegação */
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 30px auto;
+    }
+
+    .menu-link {
+      text-decoration: none;
+      padding: 10px 18px;
+      background-color: #facc15;
+      color: #000;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .menu-link:hover {
+      background-color: #ffe04d;
+      transform: scale(1.05);
+    }
   </style>
 </head>
 <body>
+
+  <!-- Menu de navegação entre galerias -->
+  <div class="menu">
+    <a href="galeria.html" class="menu-link">Galeria 1</a>
+    <a href="galeria2.html" class="menu-link">Galeria 2</a>
+    <a href="galeria3.html" class="menu-link">Galeria 3</a>
+    <a href="galeria4.html" class="menu-link">Galeria 4</a>
+    <a href="galeria5.html" class="menu-link">Galeria 5</a>
+  </div>
 
   <h1>Galeria de Wallpapers</h1>
 
